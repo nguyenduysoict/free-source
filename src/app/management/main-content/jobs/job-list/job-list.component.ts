@@ -28,9 +28,9 @@ export class JobListComponent implements OnInit, AfterViewInit {
         return;
       }
     }
-    var currentViewWidth = window.innerWidth - 300; // độ rộng vùng hiển thị danh sách thẻ
+    var currentViewWidth = window.innerWidth - 182; // độ rộng vùng hiển thị danh sách thẻ
     var currentCardWidth = currentCardWidth ? currentCardWidth : event?.target?.offsetWidth; // độ rộng 1 thẻ
-    var cardPerLine = Math.floor(currentViewWidth / currentCardWidth); // số lượng thẻ mỗi dòng
+    var cardPerLine = Math.floor(currentViewWidth / (currentCardWidth + 32)); // số lượng thẻ mỗi dòng
     // dòng hiện tại đang được click
     var currentLine = Math.floor(item / cardPerLine);
     if (item % cardPerLine) {
@@ -39,7 +39,7 @@ export class JobListComponent implements OnInit, AfterViewInit {
     }
     var lastItemOfLine = currentLine * cardPerLine; // vị trí thẻ cuối cùng của dòng được click
     lastItemOfLine = lastItemOfLine > this.cards.length ? this.cards.length : lastItemOfLine;
-    var detailHTML = this.detailDiv.replace("{width}", currentViewWidth + "px").replace("{content}", "Card " + item).replace("{currentCard}", item);
+    var detailHTML = this.detailDiv.replace("{width}", currentCardWidth * cardPerLine + 32 * cardPerLine - 32 + "px").replace("{content}", "Card " + item).replace("{currentCard}", item);
     this.cardElements[lastItemOfLine - 1]?.insertAdjacentHTML('afterend', detailHTML)
   }
 }
