@@ -1,0 +1,11 @@
+.container{
+    margin:24px;
+    display: flex;
+    flex-wrap: wrap;
+    .card-item{
+        width: 250px;
+        height: 200px;
+        background-color:cadetblue;
+        margin: 16px;
+    }
+}

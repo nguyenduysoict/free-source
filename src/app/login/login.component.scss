@@ -1,0 +1,25 @@
+.login-view{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .login-container{
+        height: 100%;
+        background: url('../../assets/image/login-bg.jpg');
+        background-size: cover;
+        .login-box{
+            width: 500px;
+            height: 250px;
+            background: white;
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -250px;
+            margin-top: -150px;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+    }
+}
