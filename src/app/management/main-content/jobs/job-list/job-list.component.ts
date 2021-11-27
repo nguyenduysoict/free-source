@@ -28,6 +28,8 @@ export class JobListComponent implements OnInit, AfterViewInit {
         return;
       }
     }
+    // 182 là độ rộng sidebar
+    // 32 là khoảng cách trái phải mỗi Card
     var currentViewWidth = window.innerWidth - 182; // độ rộng vùng hiển thị danh sách thẻ
     var currentCardWidth = currentCardWidth ? currentCardWidth : event?.target?.offsetWidth; // độ rộng 1 thẻ
     var cardPerLine = Math.floor(currentViewWidth / (currentCardWidth + 32)); // số lượng thẻ mỗi dòng
